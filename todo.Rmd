@@ -10,6 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # To-Do List {.tabset}
 
+* find citation/reference for lesson plan
+
 * make example dataset: class_ipums_data
   + this should include all variables referenced in unit 2 exploratory /testing analysis
   + TAKE SCREENSHOTS and document process
@@ -48,6 +50,10 @@ knitr::opts_chunk$set(echo = TRUE)
   
 **ONCE ALL ABOVE IS DONE**
 
+
 * flesh out lessons to reference class_ipums_data, distributions, results, etc.
 
-##
+# Future Goals
+
+* Modular textbook
+  * select which lessons/activites to be included for each build
