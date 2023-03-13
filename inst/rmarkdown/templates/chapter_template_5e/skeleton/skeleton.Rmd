@@ -12,13 +12,13 @@ knitr::opts_chunk$set(echo = TRUE)
 # Intro/Setup
 
 **NOTE:** chapter templates **do not** require a yaml header (most .RMD do). 
-*Be sure to delete the above header (between the `---` fences) before compiling bookdown.*
 
 
 ## Tips
 
 Lay out sections using `#` headers.
 
+**^^^ Be sure to delete this and above before compiling bookdown. ^^^^**
 
 
 # Engage
