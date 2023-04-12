@@ -33,19 +33,14 @@ Brief example of an engaging phenomenon.
 
 # Explore
 
-Explore other examples of this phenomenon.
-
-
-Build on the first one to show variation.
-  * Other ways to represent the phenomenon/data
-    + tabular
-    + visually
+conduct demo/small-scale experiment/analysis
+Ask leading questions, form hypotheses; 
   * can the example be grouped / broken into subgroups
     + does the same pattern/phenomenon apply?
   * Is there a corollary / inverse phenomenon?
 
+Pose questions to explore
 
-# Explain
 
 
 Discuss/interrogate the pattern of the data
@@ -53,12 +48,36 @@ Discuss/interrogate the pattern of the data
   * try to have it student led / guided
   * with time, students guess at what the data shows/doesn't show without labels
 
+
+
+# Explain - lecture/read
+
+TEXT
+
 # Elaborate
 
-Work through a new example, contextualizing the phenomenon using real-world data/examples.
+Work through the same process/analysis on new data. Either a different 
+variable(s) in the same sample, or applying/demonstrating the phenomenon 
+using real-world data/examples.
+
+
+* Reiterate/reinforc the process/task of the lesson
+* Does this fit in to other steps/analysis
+* does this fit in to other thematic topics?
+
+(Possibly) Build on the first one to show variation.
+  * Other ways to represent the phenomenon/data
+    + tabular
+    + visually
+
 
 
 # Evaluate/Exercises
+
+Students should reproduce/apply the example from the lesson to a chosen dataset.
+  * Instructor can specify 1 report for a specific combination of variables (to match an exact answer)
+  * Students can choose 1 additional variable(s) to investigate in a similarly structured report
+  * Students write a reflection statement/blog summarizing a key finding
 
  short lab exercises for students to recreate / code in R
  
