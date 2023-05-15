@@ -10,18 +10,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # To-Do List {.tabset}
 
-* find citation/reference for lesson plan
 
-* make example dataset: class_ipums_data
+* make example dataset: class_survey_data
+  + settle on 5-10 variables to include
+  
+
+* flesh out lessons to reference class_ipums_data, distributions, results, etc.
+
+
+* make example dataset: class_ipums_data 
   + this should include all variables referenced in unit 2 exploratory /testing analysis
   + TAKE SCREENSHOTS and document process
     + include notes in template(?)
     + include notes in bookdown
+  *done?*
 
 
   
 * make demo/how-to script for unit 2
-  + hhincome ~ sex etc
+  + hhincome ~ edattain 
+    reclass to work with 2 groups (HS+ or < HS)
+    reclass to 3+ groups (< HS, HS, College +)
 
 * make demo/how-to script for unit 3 example(s)
 
@@ -33,27 +42,33 @@ knitr::opts_chunk$set(echo = TRUE)
       + nuclear, extended, communal-non-related, single-headed
 **ONCE demo lessons are done**
   
-* make template for general exercise
-  + building a data extract 
-  + read in and starting analysis
-* make ONE example lesson
-  + include ONE example exercise
   
   
-* make 5e lesson template
-
-**REMAKE SIMILAR FOR LESSON 1**
-
-* make example dataset: class_survey_data
-  + settle on 5-10 variables to include
+* Lesson Plan template
+  * find citation/reference for lesson plan
+  * Include section that calls on exercise template
   
   
-**ONCE ALL ABOVE IS DONE**
-
-
-* flesh out lessons to reference class_ipums_data, distributions, results, etc.
-
+* Exercise Template - possibly hw assignments
+  * Settle on standard sections
+    + building a data extract
+    + declare packages, file paths, parameters, etc
+    + read data in 
+    + Analysis Section
+    + Results/Visualizations
+    + Conclusion/Discussion
+  * flesh out example exercises
+    + ideally 1 for each lesson as the main ellaborate
+    + 1 companion exercise to be completed as HW
+      + 1 type could be same inputs and students should achieve an expected outcome
+        + could include more targeted presentaion of key results/metrics
+      + 1 type could be more open/exploration where students employ a method on a 
+      variable/ dataset of choice
+        + could include more open summary/discussion section
+    
+  
+  
 # Future Goals
 
 * Modular textbook
-  * select which lessons/activites to be included for each build
+  * select which lessons/activities to be included for each build
