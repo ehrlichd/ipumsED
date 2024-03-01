@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Intro/Setup
+## Intro/Setup
 
 **NOTE:** chapter templates **do not** require a yaml header (most .RMD do). 
 
@@ -21,7 +21,9 @@ Lay out sections using `#` headers.
 **^^^ Be sure to delete this and above before compiling bookdown. ^^^^**
 
 
-# Engage
+# CHAPTER TITLE
+
+## Engage
 
 Brief example of an engaging phenomenon.
   * Poll students and discuss results
@@ -31,7 +33,7 @@ Brief example of an engaging phenomenon.
     + the average height of humans is 5'5"
 
 
-# Explore
+## Explore
 
 conduct demo/small-scale experiment/analysis
 Ask leading questions, form hypotheses; 
@@ -50,11 +52,11 @@ Discuss/interrogate the pattern of the data
 
 
 
-# Explain - lecture/read
+## Explain - lecture/read
 
 TEXT
 
-# Elaborate
+## Elaborate
 
 Work through the same process/analysis on new data. Either a different 
 variable(s) in the same sample, or applying/demonstrating the phenomenon 
@@ -72,7 +74,7 @@ using real-world data/examples.
 
 
 
-# Evaluate/Exercises
+## Evaluate/Exercises
 
 Students should reproduce/apply the example from the lesson to a chosen dataset.
   * Instructor can specify 1 report for a specific combination of variables (to match an exact answer)

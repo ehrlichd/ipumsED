@@ -1,0 +1,127 @@
+---
+title: "Untitled"
+author: "DEE"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Sampling Census Data
+
+Because census data is organzied with person-level records within a household unit, 
+we cannot just randomly sample a person-level file.
+
+
+
+The process is not terribly complex, but may be new to some users. The steps are:
+
+1. Create a sample of household IDs
+2. Filter the full dataset down to only those hosueholds.
+
+
+Below we outline the approach both with baseR as well as using the dplyr package.
+Results should be similar but not identical as they are ultimately using separate
+sampling functions.
+
+
+
+Be sure to `set.seed()` to ensure the random sampling is repeatable in the future.
+
+
+## Load dataset
+
+See the code below to run this on the included `ex_census_data`, or on a true
+IPUMS data extract.
+
+```{r}
+library(ipumsED)
+orig_data <- ex_census_data
+
+```
+
+
+```{r, eval = FALSE}
+
+library(ipumsr)
+
+path_to_data <- file.path()
+path_to_ddi <- file.path()
+
+
+ddi <- ipumsr::read_ipums_ddi(path_to_ddi)
+orig_data <- ipumsr::read_ipums_micro(ddi,data_file = path_to_data)
+
+```
+
+
+
+## Random sample of households - base R
+
+
+Because the base R `sample()` function requires an integer size to sample, we must
+first calculate the `n_size`. We do this by finding the `round`ed `length` of `unique_hhs`.
+
+Notice that we create `unique_hhs_int`, an integer vector of household. This is
+makes it easier to subset `unique_hhs`.
+
+
+
+```{r}
+
+## find unique hhs
+unique_hhs <- unique(orig_data$SERIAL)
+## create an integer vector of unique hhs
+unique_hhs_int <- seq_along(unique_hhs)
+
+## find the number of hhs to ultimately sample
+n_size <- round(length(unique_hhs)*.01)
+
+
+
+set.seed(13)
+sampled_hhs_1 <- unique_hhs[sample(unique_hhs_int, size = n_size)]
+sampled_dat_1 <- orig_data[orig_data$SERIAL %in% sampled_hhs_1,]
+
+
+```
+
+
+## Random sammle of households - dplyr
+
+```{r}
+
+
+library(dplyr)
+
+## note: seed must be passed in the SAME CALL it is needed in.
+set.seed(13)
+sampled_hhs_2 <- orig_data %>% distinct(SERIAL) %>% slice_sample(prop = .01) %>% pull(SERIAL)
+sampled_dat_2 <- orig_data %>% filter(SERIAL %in% sampled_hhs_2)
+
+```
+
+
+
+## Compare results
+
+```{r}
+
+table(sampled_hhs_1==sampled_hhs_2)
+identical(sampled_hhs_1,sampled_hhs_2)
+
+class(sampled_hhs_1)
+class(sampled_hhs_2)
+
+```
+
+
+## Write out results
+
+```{r, eval = FALSE}
+
+write.csv(sampled_dat_1, "sampled_census_data.csv",row.names = FALSE)
+
+```

@@ -10,13 +10,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # To-Do List {.tabset}
 
+
+
+* Develop FIRST DRAFT of Unit 1
+  + good ideas for engagement and activities in place
+  + use as a model to build out unit 2
+
 * find citation/reference for lesson plan
 
-* make example dataset: class_ipums_data
-  + this should include all variables referenced in unit 2 exploratory /testing analysis
-  + TAKE SCREENSHOTS and document process
-    + include notes in template(?)
-    + include notes in bookdown
 
 
   

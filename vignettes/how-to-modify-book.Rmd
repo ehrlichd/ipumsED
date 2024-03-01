@@ -1,0 +1,109 @@
+---
+title: "how-to-modify-book"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{how-to-modify-book}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ipumsED)
+```
+
+
+# How to modify ipumsEDbook with ipumsED
+
+The "textbook" `ipumsEDbook` is just that, a textbook. The R package primarily
+contains the raw text and code necessary to generate the nicely rendered ebook.
+
+*This* R package, `ipumsED` contains all the example datasets referenced in ipumsEDbook.
+It also contains some additional resources, like this vignette, to help users get
+the most out of `ipumsEDbook`.
+
+
+When users view the HTML version of this text online, or download an offline verison,
+they are viewing a **compiled** document. If users are interested in modifying the datasets, or text of the book, they will need some additional tools to work on the development version of the book and recompile it themselves.
+
+
+This vignette will walk users through how to add their own custom data to be included
+in their own custom version of `ipumsEDbook`.
+
+
+## How to Modify - Setup
+
+In order to modify the `ipumsEDbook`, you will need several additional tools
+* `devtools` (R package)
+* GIT (separate install)
+* `Rtools` (separate install)
+* `Xtools` (mac users, app store)
+
+## How to Modify Text
+
+With these tools in place, the first step to modifying the `ipumsEDbook` text is 
+to create your own local copy. We do this using RStudio, and GIT.
+
+Set up a new version controlled project by cloning the repo at https://github.com/ehrlichd/ipumsEDbook
+
+All the text to modify is contained within `.Rmd` files. All the other files are necesarry,
+at one point or another, in the compilation of the book.
+
+The Title page, as well as the preface section are included in a special Rmarkdown 
+file called `index.Rmd`. This file includes a YMAL header that species additional
+parameters for the entire book.
+
+After this, each relevant `.Rmd` file begins with a 2-digit number followed by a 
+descriptive file name. 
+
+Modifying the text is as easy as changing the text within one of these files, and 
+recompiling the book!
+
+Once you make and save changes you can click on the Build tab, then click 
+"Build Book"
+
+
+*add a screenshot*
+
+
+## How to Modify Data
+
+
+We have tried to make including custom datasets as easy as possible. 
+
+To do so, first check the relevant folders within the `example_data` sub-folder.
+Make sure the data you'd like to include matches the structure of this data. Usually,
+you will want to ensure your new data has the same number of columns, and column 
+names as the example data.
+
+Save your new data as with the same file name, followed by `_alt1, _alt2, _alt3,...` as appropriate.
+
+
+Once you make you can click on the Build tab, then click 
+"Build Book"
+
+You should now see a dropdown bar on the HTML/ebook site that allows you to choose
+which version of the data you'd like to display.
+
+NOTE: that if you compile to PDF, multiple plots will be listed sequentially.
+
+
+## How to Recomplile
+
+## Unit1
+
+### Chapter1
+
+#### Word Cloud
+
+
+The example dataset included for the word cloud comes from the text of the wikipedia
+page for [Data](https://en.wikipedia.org/wiki/Data).
+
+Users can easily include an alternative dataset
